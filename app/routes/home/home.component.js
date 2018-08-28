@@ -1,12 +1,9 @@
 import React, { PureComponent } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
-import { FormattedMessage } from 'react-intl';
-import envConfig from 'env-config';
+import { FormProvider, Field } from 'context-form/src/main'; //eslint-disable-line
 
-import messages from './home.messages';
-import { MaintainerList } from './maintainerList/maintainerList.component';
-import { Container, Title, TitleLogo, EnvName } from './home.styles';
+import { Container } from './home.styles';
 
 export class Home extends PureComponent {
   static propTypes = {
@@ -36,14 +33,9 @@ export class Home extends PureComponent {
       <Container>
         <Helmet title="Homepage" />
 
-        <Title>
-          <TitleLogo name="logo" />
-          <FormattedMessage {...messages.welcome} />
-        </Title>
-
-        <EnvName>Environment: {envConfig.name}</EnvName>
-
-        <MaintainerList items={this.props.items} />
+        <FormProvider>
+          <Field name="asd" />
+        </FormProvider>
       </Container>
     );
   }
