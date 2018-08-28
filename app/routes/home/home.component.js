@@ -28,13 +28,15 @@ export class Home extends PureComponent {
     }
   }
 
+  writeSomething = () => console.log('writeSomething');
+
   render() {
     return (
       <Container>
         <Helmet title="Homepage" />
 
         <FormProvider>
-          <Field name="asd" />
+          <Field name="simpleField" component="input" />
         </FormProvider>
       </Container>
     );
