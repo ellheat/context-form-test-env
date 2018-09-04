@@ -51,11 +51,14 @@ export class Home extends PureComponent {
     });
   };
 
-  renderTextField = ({ input, error }) => {
+  renderTextField = ({ input, error, touched, active, dirty }) => {
     return (
       <Fragment>
         <input {...input} onChange={this.handleChange(input)} />
         <p>{error && error.length ? error[0] : null}</p>
+        <p>touched: {`${touched}`}</p>
+        <p>active: {`${active}`}</p>
+        <p>dirty: {`${dirty}`}</p>
       </Fragment>
     );
   };
