@@ -79,7 +79,11 @@ export class Home extends PureComponent {
     return (
       <Container>
         <Helmet title="Homepage" />
-        <FormProvider component={this.renderForm} validate={this.validate} />
+        <FormProvider
+          component={this.renderForm}
+          validate={this.validate}
+          initialValues={{ simpleField: 'example data' }}
+        />
       </Container>
     );
   }
